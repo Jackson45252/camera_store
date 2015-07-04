@@ -1,8 +1,8 @@
 @charset "UTF-8";
-html{
-	font-family: sans-serif;
+html {
+    font-family: sans-serif;
 }
- body {
+body {
     background: url("../images/bg.png");
 }
 #top_bar {
@@ -13,6 +13,7 @@ html{
     border-top: 3px solid #99B92A;
     background: #fff;
     overflow: auto;
+    margin-bottom: 35px;
 }
 .wrap {
     margin: 0 auto;
@@ -42,7 +43,7 @@ html{
 
 header .logo {
     float: left;
-    margin: 35px 0;
+    margin-bottom: 35px;
 }
 .logo a {
     text-indent: -9999px;
@@ -52,57 +53,77 @@ header .logo {
     background: url("../images/logo.png") no-repeat;
 }
 .social {
-	margin: 35px 0;
+    margin: 35px 0;
     float: right;
-
 }
 .social input {
-	float: left;
-	width: 254px;
-	padding: 1px 10px;
+    float: left;
+    width: 254px;
+    padding: 1px 10px;
     border: 2px solid #CFCFCF;
     border-radius: 10px;
     height: 34px;
-    background:#FFF url("../images/icon01.png")no-repeat scroll bottom right;
+    background: #FFF url("../images/icon01.png")no-repeat scroll bottom right;
 }
-.social i{
-	line-height: 40px;
-	display: inline-block;
-	width:40px;
-	height: 40px;
+.social i {
+    line-height: 40px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
 }
-.rss{
-
-	background: url("../images/icon02.png")
+.rss {
+    background: url("../images/icon02.png")
 }
-.pinterest{
-	background: url("../images/icon03.png")
+.pinterest {
+    background: url("../images/icon03.png")
 }
-.facebook{
-	background: url("../images/icon04.png")
+.facebook {
+    background: url("../images/icon04.png")
 }
-.twitter{
-	background: url("../images/icon05.png")
+.twitter {
+    background: url("../images/icon05.png")
 }
-.dribble{
-	background: url("../images/icon06.png")
+.dribble {
+    background: url("../images/icon06.png")
 }
-header nav{
-	display: block;
-	clear: both;
-padding: 30px 0;
-	border-width:8px 0;
--webkit-border-image: url(../images/border.png) repeat 8;
-	-o-border-image: url(../images/border.png) repeat 8;
-	-border-image: url(../images/border.png) repeat 8;
-	overflow: auto;
+header nav {
+    display: block;
+    margin-bottom: 60px;
+    clear: both;
+    border-width: 8px 0;
+    -webkit-border-image: url(../images/border.png) repeat 8;
+    -o-border-image: url(../images/border.png) repeat 8;
+    -border-image: url(../images/border.png) repeat 8;
+    overflow: auto;
 }
-nav li{
-	margin-right:20px; 
-	display: inline-block;
+nav li {
+    padding: 30px 0;
+    float: left;
+    margin-right: 30px;
+    display: inline-block;
+}
+nav li:last-child {
+    padding: 0;
+    float: right;
+    margin: 0;
+    margin-top: 7px;
+}
+nav a {
+    font-weight: bold;
+    color: black;
+}
+nav button {
+    font-size: 15px;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    padding-left: 50px;
+    background: #bbd239 url("../images/shop_cart.png")no-repeat scroll 20px 10px;
 }
 /*slider*/
-
+.slider{
+	height: 421px;
+}
 .slider {}
 /*content*/
 /*footer*/
