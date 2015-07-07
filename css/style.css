@@ -17,6 +17,10 @@ a:link,a:visited{
 .clear {
     clear: both;
 }
+.active{
+	color: #99B92A;
+}
+/*top_bar*/
 .top_bar {
     font-family: sans-serif;
     font-size: 14px;
@@ -396,6 +400,7 @@ line-height: 18px;
 	margin-bottom: 33px;
 	background: #F6F5F7 url("../images/dot.png")no-repeat right 5px bottom 5px;
 }
+/*bot_bar*/
 .bot_bar {
     font-family: sans-serif;
     font-size: 14px;
@@ -408,4 +413,7 @@ line-height: 18px;
 .bot_bar li {
     display: inline;
     padding: 0 5px;
+}
+.bot_bar a{
+	color:#999;
 }
