@@ -7,13 +7,52 @@
     <title>Camera Store</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        var options = {
+            $AutoPlay: true,
+            $PauseOnHover: 1, //[Optional] Whether to pause when mouse over if a slideshow is auto playing, default value is false
+            $ArrowKeyNavigation: true, //Allows arrow key to navigate or not
+            $SlideWidth: 1181, //[Optional] Width of every slide in pixels, the default is width of 'slides' container
+            $SlideHeight: 421, //[Optional] Height of every slide in pixels, the default is width of 'slides' container
+            $SlideSpacing: 0, //Space between each slide in pixels
+            $DisplayPieces: 3, //Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+            $ParkingPosition: 200, //The offset position to park slide (this options applys only when slideshow disabled).
+            $ArrowNavigatorOptions: { //[Optional] Options to specify and enable arrow navigator or not
+                $Class: $JssorArrowNavigator$, //[Requried] Class to create arrow navigator instance
+                $ChanceToShow: 2, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $AutoCenter: 2, //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                $Steps: 1 //[Optional] Steps to go for each navigation request, default value is 1
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+        //responsive code begin
+        //you can remove responsive code if you don't want the slider scales while window resizes
+        function ScaleSlider() {
+            var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+            //alert(parentWidth);
+            if (parentWidth)
+                jssor_slider1.$ScaleWidth(Math.min(parentWidth, 1900));
+            else
+                window.setTimeout(ScaleSlider, 30);
+        }
+        ScaleSlider();
+        $(window).bind("load", ScaleSlider);
+        $(window).bind("resize", ScaleSlider);
+        $(window).bind("orientationchange", ScaleSlider);
+        //responsive code end
+    });
+    </script>
 
 </head>
 
 <body>
     <div class="top_bar">
-        <div class="wrap">
-            <div class="left">
+        <div class="top_bar_inner">
+            <div class="top_bar_select">
                 Language:
                 <select name="" id="">
                     <option value="">English</option>
@@ -28,7 +67,7 @@
 
                 Telphone:<a href="#">+569 973 658</a>
             </div>
-            <div class="right">
+            <div class="top_bar_menu">
                 <ul>
                     <li><a href="#">My Account</a>
                     </li>
@@ -72,13 +111,6 @@
                     </li>
                 </ul>
 
-
-
-
-
-
-
-
             </div>
             <nav>
                 <ul>
@@ -100,20 +132,28 @@
                 </ul>
 
             </nav>
-
-
-
-
         </header>
-
-        <div class="slider">
-            <ul>
-                <li><img src="images/slider01.png" alt="">
-                </li>
-                <!--<li><img src="images/slider02.png" alt=""></li>
-            <li><img src="images/slider02.png" alt=""></li>-->
-            </ul>
+    </div>
+    <div id="slider1_container" class="slider">
+        <div u="slides" class="slider_inner">
+            <div><img u="image" src="images/slider01.jpg" />
+            </div>
+            <div><img u="image" src="images/slider02.jpg" />
+            </div>
+            <div><img u="image" src="images/slider03.jpg" />
+            </div>
+            <div><img u="image" src="images/slider04.jpg" />
+            </div>
         </div>
+        <span u="arrowleft" class="jssora13l">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora13r">
+        </span>
+        <!--#endregion Arrow Navigator Skin End -->
+
+    </div>
+    <div class="wrap">
         <div class="content">
             <div class="visit">
                 <h2>CHECK OUR <strong>AMAZING OFFERS</strong>,VISIT OUR <strong>STORE</strong> NOW </h2>
@@ -126,9 +166,9 @@
                 <button>←</button>
                 <div class="clear"></div>
             </div>
-            <div class="recent">
+            <ul class="recent">
 
-                <div class="product">
+                <li class="product">
                     <img src="images/r_product01.png" alt="">
                     <div class="price"><span>$899.99</span>
                         <button>ADD TO CART</button>
@@ -138,8 +178,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-                <div class="product">
+                </li>
+                <li class="product">
                     <img src="images/r_product02.png" alt="">
                     <div class="price"><span>$699.99</span>
                         <button>ADD TO CART</button>
@@ -149,8 +189,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-                <div class="product">
+                </li>
+                <li class="product">
                     <img src="images/r_product03.png" alt="">
                     <div class="price"><span>$2499.99</span>
                         <button>ADD TO CART</button>
@@ -160,8 +200,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-                <div class="product">
+                </li>
+                <li class="product">
                     <img src="images/r_product04.png" alt="">
                     <div class="price"><span>$5499.99</span>
                         <button>ADD TO CART</button>
@@ -171,8 +211,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-            </div>
+                </li>
+            </ul>
             <div class="item_title">
                 <h3>FEATURE PRODUCTS</h3>
                 <div class="border"></div>
@@ -180,9 +220,9 @@
                 <button>←</button>
                 <div class="clear"></div>
             </div>
-            <div class="feature">
+            <ul class="feature">
 
-                <div class="product">
+                <li class="product">
                     <img src="images/f_product01.png" alt="">
                     <div class="price"><span>$2499.99</span>
                         <button>ADD TO CART</button>
@@ -192,8 +232,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-                <div class="product">
+                </li>
+                <li class="product">
                     <img src="images/f_product02.png" alt="">
                     <div class="price"><span>$499.99</span>
                         <button>ADD TO CART</button>
@@ -203,8 +243,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-                <div class="product">
+                </li>
+                <li class="product">
                     <img src="images/f_product03.png" alt="">
                     <div class="price"><span>$749.99</span>
                         <button>ADD TO CART</button>
@@ -214,8 +254,8 @@
                         <p>Lorem ipsum dolor sit amet, conse adipiscing elit, sed diam nonu mrny mod tincidunt ut lao dolore.</p>
                     </div>
                     <a href="#">View the Product></a>
-                </div>
-                <div class="product">
+                </li>
+                <li class="product">
                     <img src="images/f_product04.png" alt="">
                     <div class="price"><span>$5499.99</span>
                         <button>ADD TO CART</button>
@@ -227,44 +267,47 @@
                     </div>
 
                     <a href="#">View the Product></a>
-                </div>
-            </div>
+                </li>
+            </ul>
             <div class="item_title">
                 <h3>CHECK OUR BRANDS</h3>
                 <div class="border"></div>
+                <button>→</button>
+                <button>←</button>
                 <div class="clear"></div>
             </div>
-            <div class="brand">
-                <ul>
-                    <li>
-                        <a href=""><img src="images/sponsor01.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href=""><img src="images/sponsor02.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href=""> <img src="images/sponsor03.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href=""><img src="images/sponsor04.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href=""><img src="images/sponsor05.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="brand">
+
+                <li>
+                    <a href=""><img src="images/sponsor01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href=""><img src="images/sponsor02.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img src="images/sponsor03.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href=""><img src="images/sponsor04.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href=""><img src="images/sponsor05.png" alt="">
+                    </a>
+                </li>
+
+            </ul>
 
         </div>
         <div class="clear"></div>
     </div>
-    <footer>
-        <div class="wrap">
 
+    <footer>
+<button id="gotop"></button>
+        <div class="footer_inner">
 
             <div class="follow">
                 <div class="logo">
@@ -293,12 +336,12 @@
             <div class="post">
                 <h3>Recent Posts</h3>
                 <ul>
-                    <li><img src="images/post01.png" alt="">
+                    <li class="post1">
                         <h4>New Camera Set</h4>
                         <p>posted by <a href="#">Admin</a>
                         </p>
                     </li>
-                    <li><img src="images/post02.png" alt="">
+                    <li class="post2">
                         <h4>Special Camera Lenses</h4>
                         <p>posted by <a href="#">Gljivec</a>
                         </p>
@@ -330,33 +373,42 @@
                 <h3>What People say</h3>
                 <ul>
                     <li>
-                        <div><figure id="user01"></figure><span>ANNA</span> </div>
+                        <div>
+                            <figure id="user01"></figure><span>ANNA</span> </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer orci</p>
                     </li>
                     <li>
 
-                        <div><figure id="user02"></figure><span>ERICA</span></div>
+                        <div>
+                            <figure id="user02"></figure><span>ERICA</span>
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer orci</p>
 
                     </li>
                 </ul>
             </div>
-
-        </div>
+            <div class="clear"></div>
+            </div>
+            
 
     </footer>
+
     <div class="bot_bar">
-        <div class="wrap">
-            <div class="left">
+        <div class="bot_bar_inner">
+            <div class="bot_bar_linkgroup">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">SITEMAP</a></li>
-                    <li><a href="#">CONTANT</a></li>
+                    <li><a href="#">HOME</a>
+                    </li>
+                    <li><a href="#">PORTFOLIO</a>
+                    </li>
+                    <li><a href="#">SITEMAP</a>
+                    </li>
+                    <li><a href="#">CONTANT</a>
+                    </li>
                 </ul>
             </div>
 
-            <div class="right">
+            <div class="copyright">
                 <p> CameraStore @2013 by <a href="#">PremiumCoding</a> | All Rights Reserved </p>
             </div>
 
