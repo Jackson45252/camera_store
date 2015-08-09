@@ -75,18 +75,20 @@ a:link, a:visited {
 header {
     margin: 0 auto;
     max-width: 1186px;
-    overflow: auto;
+  overflow: hidden;
 }
 header .logo {
     float: left;
     margin-bottom: 35px;
+     overflow: hidden;
 }
 header .logo a {
     text-indent: -9999px;
     width: 341px;
     height: 55px;
     display: block;
-    background: url("../images/logo.png") no-repeat;
+   
+    background: url("../images/logo.png") no-repeat center 0;
 }
 .social {
     margin-bottom: 35px;
@@ -517,26 +519,43 @@ footer {
 }
 /*iphone 320px*/
 
-@media only screen and (min-width: 320px) {
+@media screen and (min-width:320px) and (max-width: 567px) {
     h1 {
         background-color: yellow;
     }
     .top_bar_select{
     	display: none;
     }
+    .top_bar_menu{
+        float: none;
+        text-align: center;
+    }
     .social{
     	display: none;
     }
-    header nav{
 
+    header .logo{
+        float: none;
+        clear: both;
+text-align: center;
+    }
+    header .logo a{
+ width: 100%;
     }
     .visit{
     	display: none;
     }
+    header nav{
+        margin-bottom: 0;
+    }
     nav li{
+    	margin:0;
+    	padding: 10px 0;
+    	width: 50%;
     	text-align: center;
     }
     nav li:last-child{
+
     	display: none;
     }
     .product{
@@ -544,9 +563,35 @@ footer {
     	margin:0 5%;
     	text-align: center;
     }
+    .item_title{
+            width: 90%;
+        margin:15px 5%;
+    }
+    .brand li{
+        width: 90%;
+        margin:0 5%;
+    }
+    .footer_inner>div{
+        width: 310px;
+        float: none;
+        text-align: center;
+        margin:0 auto;
+    }
+    .follow .logo{
+        display: none;
+    }
+    .footer_inner>div:last-child{
+        margin-right: auto;
+    }
+  .bot_bar_inner{
+    text-align: center;
+  }
+  .bot_bar_linkgroup,.copyright{
+    float: none;
+  }
 }
 /*iphone horizontal 568px*/
-@media only screen and (min-width: 568px) {
+@media screen and (min-width: 568px) and (max-width: 765px){
     h1 {
         background-color: blue;
     }
@@ -556,7 +601,7 @@ footer {
 
 @media only screen and (min-width: 769px) {
     h1 {
-        background-color: green;
+       
     }
 }
 /**
@@ -586,7 +631,7 @@ footer {
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-    left: -5px;
+    /*left: -5px;
     /*fix other elements on the page moving (on Chrome)*/
     
     -webkit-transform: translatez(0);
