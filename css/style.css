@@ -87,7 +87,7 @@ header .logo a {
     width: 341px;
     height: 55px;
     display: block;
-    background: url("../images/logo.png") no-repeat center 0;
+    background: url("../images/logo.png") no-repeat;
 }
 .social {
     margin-bottom: 35px;
@@ -270,7 +270,7 @@ nav button {
     margin-bottom: 35px;
     position: relative;
     display: inline-block;
-    width: 280px;
+    width: 23%;
     background: #fff;
     margin-right: 14px;
     border: 1px solid #AAA;
@@ -346,7 +346,7 @@ nav button {
     background: #fff;
     border: 1px solid #999;
     display: block;
-    width: 234px;
+    width: 19%;
     height: 130px;
     line-height: 130px;
     text-align: center;
@@ -518,11 +518,9 @@ footer {
 }
 /*iphone 320px*/
 
-@media screen and (min-width: 320px) and (max-width: 567px) {
-   
-    .top_bar_select {
-        float: none;
-        text-align: center;
+@media screen and (max-width: 567px) {
+    .top_bar_select span {
+        display: block;
     }
     .top_bar_menu {
         display: none;
@@ -536,7 +534,7 @@ footer {
         text-align: center;
     }
     header .logo a {
-        width: 100%;
+        margin: 0 auto;
     }
     .visit {
         display: none;
@@ -573,6 +571,7 @@ footer {
         float: none;
         text-align: center;
         margin: 0 auto;
+        margin-bottom: 10px;
     }
     .follow .logo {
         display: none;
@@ -586,11 +585,13 @@ footer {
     .bot_bar_linkgroup, .copyright {
         float: none;
     }
+    #gotop {
+        x-scale: ;
+    }
 }
 /*iphone horizontal 568px*/
 
 @media screen and (min-width: 568px) and (max-width: 767px) {
- 
     .top_bar_select {
         float: none;
         text-align: center;
@@ -600,8 +601,8 @@ footer {
         text-align: center;
     }
     .social {
-      float: none;
-      text-align: center;
+        float: none;
+        text-align: center;
     }
     header .logo {
         float: none;
@@ -609,7 +610,7 @@ footer {
         text-align: center;
     }
     header .logo a {
-        width: 100%;
+        margin: 0 auto;
     }
     .visit {
         display: none;
@@ -651,7 +652,7 @@ footer {
         text-align: center;
     }
     .follow .logo a {
-margin:0 auto;
+        margin: 0 auto;
     }
     .people p {
         width: 58%;
@@ -666,10 +667,74 @@ margin:0 auto;
         float: none;
     }
 }
+/*568px~984px*/
+
+@media screen and (min-width: 568px) and (max-width: 984px) {
+    .product {
+        width: 44%;
+        margin: 0 2.5%;
+        margin-bottom: 10px;
+    }
+}
+/*568px~1124px*/
+
+@media screen and (min-width: 568px) and (max-width: 1124px) {
+    .footer_inner {
+        margin: 0 5px;
+    }
+    .footer_inner>div {
+        font-size: ;
+        width: 48%;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .follow .logo a {
+        margin: 0 auto;
+    }
+    .people p {
+        width: 58%;
+    }
+    .footer_inner>div:last-child {
+        margin-right: auto;
+    }
+}
 /*ipad 768px*/
 
-@media only screen and (min-width: 769px) {
- 
+@media screen and (min-width: 768px) and (max-width: 919px) {
+    .top_bar_select {
+        float: none;
+        text-align: center;
+    }
+    .top_bar_menu {
+        float: none;
+        text-align: center;
+    }
+    .social {
+        float: none;
+        text-align: center;
+    }
+    header .logo {
+        float: none;
+        clear: both;
+        text-align: center;
+    }
+    header .logo a {
+        margin: 0 auto;
+    }
+    .visit {
+        font-size: 26px;
+        text-align: center;
+    }
+    .visit h2, .visit button {
+        float: none;
+    }
+    .product {
+        width: 32%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
 }
 /**
  * BxSlider v4.1.2 - Fully loaded, responsive content slider
