@@ -551,6 +551,9 @@ footer {
     nav li:last-child {
         display: none;
     }
+    .slider{
+        display: none;
+    }
     .product {
         width: 90%;
         margin: 0 5%;
